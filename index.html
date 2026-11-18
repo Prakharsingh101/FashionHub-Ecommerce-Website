@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">FASHION<span>HUB</span></div>
+
+    <nav>
+        <a href="#" onclick="filterProducts('Men')">MEN</a>
+        <a href="#" onclick="filterProducts('Women')">WOMEN</a>
+        <a href="#" onclick="filterProducts('Kids')">KIDS</a>
+        <a href="#" onclick="filterProducts('All')">ALL PRODUCTS</a>
+    </nav>
+
+    <div class="search">
+        <input type="text" id="searchInput"
+        placeholder="Search products..."
+        oninput="searchProducts()">
+    </div>
+
+    <div class="icons">
+        <button onclick="openWishlist()">❤️ Wishlist (<b id="wishCount">0</b>)</button>
+
+        <button onclick="openBag()">🛍 Bag (<b id="cartCount">0</b>)</button>
+    </div>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>BIG FASHION SALE</h1>
+        <h2>UP TO 70% OFF</h2>
+        <p>Discover the latest fashion trends.</p>
+        <button onclick="filterProducts('All')">SHOP NOW</button>
+    </div>
+</section>
+
+<section class="categories">
+    <h2>SHOP BY CATEGORY</h2>
+
+    <div class="category-box">
+        <div onclick="filterProducts('Men')">👔<h3>Men</h3></div>
+        <div onclick="filterProducts('Women')">👗<h3>Women</h3></div>
+        <div onclick="filterProducts('Kids')">👕<h3>Kids</h3></div>
+        <div onclick="filterProducts('All')">👟<h3>All Fashion</h3></div>
+    </div>
+</section>
+
+<section class="products">
+    <h2>🔥 TRENDING PRODUCTS</h2>
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- Shopping Bag Drawer -->
+
+<div class="overlay" id="overlay" onclick="closePanels()"></div>
+
+<div class="side-panel" id="bagPanel">
+    <div class="panel-header">
+        <h2>🛍 My Shopping Bag</h2>
+        <button onclick="closePanels()">✕</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="total-box">
+        <h3>Total: ₹<span id="totalPrice">0</span></h3>
+        <button onclick="checkout()">PLACE ORDER</button>
+    </div>
+</div>
+
+<!-- Wishlist Drawer -->
+
+<div class="side-panel" id="wishlistPanel">
+    <div class="panel-header">
+        <h2>❤️ My Wishlist</h2>
+        <button onclick="closePanels()">✕</button>
+    </div>
+
+    <div id="wishlistItems"></div>
+</div>
+
+<footer>
+    <h2>FASHIONHUB</h2>
+    <p>Your Fashion, Your Style.</p>
+    <p>© 2026 FashionHub. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
